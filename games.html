@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games - GPTInteractive</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #1a1a2e;
+            color: #eaeaea;
+        }
+        header {
+            background: #0f3460;
+            color: #fff;
+            text-align: center;
+            padding: 50px 20px;
+        }
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+        header p {
+            font-size: 1.2rem;
+            margin: 10px 0 0;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #16213e;
+            padding: 10px 0;
+        }
+        nav a {
+            color: #eaeaea;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #4ef1a8;
+        }
+        .content {
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .content h2 {
+            font-size: 2.5rem;
+        }
+        .game-list {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        .game-card {
+            background: #16213e;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            width: 250px;
+            text-align: center;
+        }
+        .game-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        .game-card p {
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        .button {
+            display: inline-block;
+            background: #4ef1a8;
+            color: #1a1a2e;
+            padding: 10px 20px;
+            font-size: 1rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .button:hover {
+            background: #3ae18d;
+        }
+        .version {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            font-size: 0.8rem;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Games by GPTInteractive</h1>
+        <p>Explore AI-driven games and experiences!</p>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="apps.html">Apps</a>
+        <a href="about.html">About Me</a>
+    </nav>
+    <div class="content">
+        <h2>Available Games</h2>
+        <p>Check out the exciting games I’ve created using the power of AI!</p>
+
+        <div class="game-list">
+            <!-- Game 1: GPT-Pong -->
+            <div class="game-card">
+                <h3>GPT-Pong</h3>
+                <p>Classic Pong game with a twist, powered by AI!</p>
+                <a href="gpt-pong.html" class="button">Play GPT-Pong</a>
+            </div>
+        </div>
+
+        <h2>Under Development</h2>
+        <div class="game-list">
+            <!-- Game 2: GPT-Survival (Under Development) -->
+            <div class="game-card">
+                <h3>GPT-Survival</h3>
+                <p>Currently in development. Stay tuned for the release!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Version and Build Number Display -->
+    <div class="version" id="version"></div>
+
+    <script>
+        // Replace with the raw URL to your version.txt file on GitHub
+        const versionUrl = 'https://raw.githubusercontent.com/GPTInteractive/GPTInteractive/refs/heads/main/version.txt';
+
+        fetch(versionUrl)
+            .then(response => response.text())
+            .then(data => {
+                // Display version and build information in the bottom-left corner
+                document.getElementById('version').textContent = data;
+            })
+            .catch(err => {
+                // In case of any error fetching the file
+                document.getElementById('version').textContent = "Version information not available";
+                console.error('Error fetching version:', err);
+            });
+    </script>
+</body>
+</html>
