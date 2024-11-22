@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - GPTInteractive</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #1a1a2e;
+            color: #eaeaea;
+        }
+        header {
+            background: #0f3460;
+            color: #fff;
+            text-align: center;
+            padding: 50px 20px;
+        }
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+        header p {
+            font-size: 1.2rem;
+            margin: 10px 0 0;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #16213e;
+            padding: 10px 0;
+        }
+        nav a {
+            color: #eaeaea;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #4ef1a8;
+        }
+        .content {
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .content h2 {
+            font-size: 2.5rem;
+        }
+        .section {
+            margin: 40px 0;
+        }
+        .section h3 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .section p {
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+        .version {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            font-size: 0.8rem;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>About Me</h1>
+        <p>Discover my passion for AI-driven games and apps.</p>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="games.html">Games</a>
+        <a href="apps.html">Apps</a>
+    </nav>
+    <div class="content">
+        <h2>Hi, I'm GPTInteractive</h2>
+        <p>I love creating games and apps with AI because it's an exciting challenge that pushes the boundaries of creativity and technology. Every project is an opportunity to explore how AI can make games more interactive, dynamic, and fun.</p>
+
+        <div class="section">
+            <h3>Why AI?</h3>
+            <p>Integrating AI into my games is a fun way to create unique experiences. Whether it's building intelligent enemies, crafting dynamic environments, or creating personalized gameplay, AI opens up endless possibilities. The challenge of teaching machines to think and react like humans is what makes this process so enjoyable for me.</p>
+        </div>
+
+        <div class="section">
+            <h3>What I Create</h3>
+            <p>From action-packed games like "GPT-Pong" to game launchers like "GPT-Launcher," I use AI to power the gameplay and interactions. I'm always experimenting with new ideas to bring AI-driven mechanics to life and make every game feel fresh and innovative.</p>
+        </div>
+
+        <div class="section">
+            <h3>The Fun of Creating</h3>
+            <p>Each new project is an adventure, and I love the process of tackling problems, iterating, and testing AI models in the context of gaming. It’s an ever-evolving challenge, and that’s what makes game development with AI so rewarding!</p>
+        </div>
+    </div>
+
+    <!-- Version and Build Number Display -->
+    <div class="version" id="version"></div>
+
+    <script>
+        // Replace with the raw URL to your version.txt file on GitHub
+        const versionUrl = 'https://raw.githubusercontent.com/GPTInteractive/GPTInteractive/refs/heads/main/version.txt';
+
+        fetch(versionUrl)
+            .then(response => response.text())
+            .then(data => {
+                // Display version and build information in the bottom-left corner
+                document.getElementById('version').textContent = data;
+            })
+            .catch(err => {
+                // In case of any error fetching the file
+                document.getElementById('version').textContent = "Version information not available";
+                console.error('Error fetching version:', err);
+            });
+    </script>
+</body>
+</html>
